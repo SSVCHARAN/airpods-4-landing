@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AirPods 4 - Experience the Magic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Safety Loader -->
+    <div class="loader-wrapper" id="global-loader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Global Three.js Container -->
+    <div class="canvas-container" id="canvas-container"></div>
+
+    <nav>
+        <div class="nav-content">
+            <a href="#" class="logo">
+                <svg viewBox="0 0 18 18" width="18" height="18" fill="currentColor">
+                    <path d="M15.045 9.105c.015 2.19 1.905 2.925 1.935 2.94-.015.045-.3 1.035-1.005 2.055-.6.885-1.23 1.77-2.22 1.785-.975.015-1.29-.585-2.4-.585-1.125 0-1.47.57-2.4.6-.96.015-1.665-.96-2.28-1.845-1.245-1.8-2.19-5.085-.915-7.305.63-1.11 1.77-1.815 3.015-1.83.945-.015 1.83.63 2.4.63.57 0 1.665-.795 2.805-.675.48.015 1.83.195 2.7 1.47-.075.045-1.62.945-1.635 2.76M12.33 2.385c.42-.51.705-1.215.63-1.92-.615.03-1.35.405-1.785.915-.39.45-.735 1.17-.63 1.86.69.045 1.365-.345 1.785-.855"/>
+                </svg>
+                <span>AirPods 4</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#hero">Overview</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#sensors">Tech Specs</a></li>
+            </ul>
+            <div class="nav-right">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                </button>
+                <a href="#selection" class="cta">Order</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="light-rays" id="hero-light-rays"></div>
+            <div class="hero-ambient"></div>
+            <div class="hero-content">
+                <div class="hero-card reveal">
+                    <p class="hero-eyebrow">All-new</p>
+                    <div class="sparkle-container" id="hero-sparkle-container">
+                        <h1 class="hero-heading dia-reveal">AirPods 4.</h1>
+                    </div>
+                    <p class="hero-sub">The next generation of sound.<br>Now with Active Noise Cancellation.</p>
+                    <div class="hero-explore">
+                        <span class="explore-text">Scroll to explore</span>
+                        <div class="explore-arrow">↓</div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator reveal" style="transition-delay: 0.6s;">
+                <div class="mouse"></div>
+            </div>
+        </section>
+
+        <!-- Iconic Hook Section -->
+        <section class="iconic-hook" id="iconic-hook">
+            <div class="content-wrapper text-center">
+                <h2 class="gradient-text reveal">Iconic shape.<br>Iconic sound.</h2>
+                <p class="subtitle reveal" style="transition-delay: 0.1s;">A transformed experience for open-ear listening.</p>
+            </div>
+        </section>
+
+        <!-- Audio Performance (Sticky) -->
+        <section class="story-scroll" id="chip-story">
+            <div class="sticky-wrapper">
+                <div class="story-content active" data-story="1">
+                    <h2 class="gradient-text">A completely<br>transformed experience.</h2>
+                    <p class="subtitle">The powerful H2 chip comes to AirPods 4, making audio and calls sound better
+                        than ever.</p>
+                </div>
+                <div class="story-content" data-story="2">
+                    <h2 class="gradient-text">Immersive, theater-like sound.</h2>
+                    <p class="subtitle">Personalized Spatial Audio with dynamic head tracking places sound all around
+                        you.</p>
+                </div>
+                <div class="story-content" data-story="3">
+                    <h2 class="gradient-text">Hang on every word.</h2>
+                    <p class="subtitle">Voice Isolation minimizes background noise while clarifying the sound of your
+                        voice — even in loud or windy conditions.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Active Noise Cancellation -->
+        <section id="anc">
+            <div class="ambient-glow blue" style="top: 10%; right: -10%;"></div>
+            <div class="content-wrapper text-left">
+                <h2 class="gradient-text reveal">The joy of quietude.</h2>
+                <p class="subtitle reveal" style="transition-delay: 0.1s;">Noise out. Magic in. Powered by the H2 chip, AirPods 4 deliver up to 2x more Active Noise Cancellation for immersive listening anywhere.</p>
+
+                <div class="cards-container">
+                    <div class="glow-card glow-card--orange reveal" data-glow style="transition-delay: 0.2s;">
+                        <div data-glow class="glow-card__outer"></div>
+                        <div class="glow-card__body">
+                            <h3>Adaptive Audio</h3>
+                            <p>Seamlessly blends Transparency and ANC to tailor noise control to your environment in real time.</p>
+                        </div>
+                    </div>
+                    <div class="glow-card glow-card--red reveal" data-glow style="transition-delay: 0.3s;">
+                        <div data-glow class="glow-card__outer"></div>
+                        <div class="glow-card__body">
+                            <h3>Adaptive Transparency</h3>
+                            <p>Minimizes the intensity of loud noises like sirens or power tools while letting the world in.</p>
+                        </div>
+                    </div>
+                    <div class="glow-card glow-card--blue reveal" data-glow style="transition-delay: 0.4s;">
+                        <div data-glow class="glow-card__outer"></div>
+                        <div class="glow-card__body">
+                            <h3>Noise-cancelling Mics</h3>
+                            <p>Dual beamforming microphones and an inward-facing microphone work together to quickly detect outside sound and counteract it before you hear it.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wearability -->
+        <section id="spatial-audio">
+            <div class="ambient-glow purple" style="bottom: 0%; left: -20%;"></div>
+            <div class="content-wrapper text-right">
+                <h2 class="gradient-text reveal">Redesigned<br>for comfort.</h2>
+                <p class="subtitle reveal" style="transition-delay: 0.1s;">A refined contour and internal architecture provide an exceptional fit and greater stability for all-day, weightless comfort.</p>
+
+                <div class="cards-container">
+                    <div class="glow-card glow-card--purple reveal" data-glow style="transition-delay: 0.2s;">
+                        <div data-glow class="glow-card__outer"></div>
+                        <div class="glow-card__body">
+                            <h3>Physical fit-ness.</h3>
+                            <p>The internal architecture and a refined contour provide a natural and secure fit for more people than ever.</p>
+                        </div>
+                    </div>
+                    <div class="glow-card glow-card--purple reveal" data-glow style="transition-delay: 0.3s;">
+                        <div data-glow class="glow-card__outer"></div>
+                        <div class="glow-card__body">
+                            <h3>Acoustic Seal</h3>
+                            <p>New ear tip designs conform to your ear, creating a perfect seal for optimal audio performance.</p>
+                        </div>
+                    </div>
+                    <div class="glow-card glow-card--purple reveal" data-glow style="transition-delay: 0.4s;">
+                        <div data-glow class="glow-card__outer"></div>
+                        <div class="glow-card__body">
+                            <h3>Pressure equalization</h3>
+                            <p>A sophisticated vent system equalizes pressure inside the ear, so you won't even notice you're wearing them.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seamless Experience -->
+        <section id="sensors">
+            <div class="ambient-glow cyan" style="top: 20%; right: -30%;"></div>
+            <div class="content-wrapper text-left">
+                <h2 class="gradient-text reveal">Every little thing<br>they do is magic.</h2>
+                <p class="subtitle reveal" style="transition-delay: 0.1s;">Instant pairing. Seamless switching. Touch control lets you manage everything from the stem with a simple tap or swipe.</p>
+
+                <div class="cards-container">
+                    <div class="glow-card glow-card--cyan reveal" data-glow style="transition-delay: 0.2s;">
+                        <div data-glow class="glow-card__outer"></div>
+                        <div class="glow-card__body">
+                            <h3>Siri on standby.</h3>
+                            <p>Play music, make calls, or check your schedule with just a "Siri" or "Hey Siri." Nod your head yes or shake no to respond.</p>
+                        </div>
+                    </div>
+                    <div class="glow-card glow-card--blue reveal" data-glow style="transition-delay: 0.3s;">
+                        <div data-glow class="glow-card__outer"></div>
+                        <div class="glow-card__body">
+                            <h3>Volume Swipe</h3>
+                            <p>A simple swipe up or down on the stem adjusts the volume smoothly. No need to reach for your device.</p>
+                        </div>
+                    </div>
+                    <div class="glow-card glow-card--purple reveal" data-glow style="transition-delay: 0.4s;">
+                        <div data-glow class="glow-card__outer"></div>
+                        <div class="glow-card__body">
+                            <h3>Skin-detect Sensor</h3>
+                            <p>Intelligent sensors know when AirPods are in your ears, so audio only plays when you're listening.</p>
+                        </div>
+                    </div>
+                    <div class="glow-card glow-card--cyan reveal" data-glow style="transition-delay: 0.5s;">
+                        <div data-glow class="glow-card__outer"></div>
+                        <div class="glow-card__body">
+                            <h3>Motion Accelerometers</h3>
+                            <p>Detects when you're speaking to focus on your voice and filter out distracting background noise.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Battery -->
+        <section id="battery">
+            <div class="ambient-glow blue" style="top: 40%; left: 50%; transform: translateX(-50%); opacity: 0.05;">
+            </div>
+            <div class="content-wrapper text-center">
+                <h2 class="gradient-text reveal">Charges fast.<br>And lasts.</h2>
+                <div class="battery-value reveal gradient-text" style="transition-delay: 0.1s;">30<span>hrs</span></div>
+                <p class="subtitle reveal" style="transition-delay: 0.2s;">Total listening time with the case. Power for hours in a smaller, smarter case that’s easier to track and faster to charge.</p>
+
+                <div class="cards-container">
+                    <div class="glow-card glow-card--green reveal" data-glow style="transition-delay: 0.3s;">
+                        <div data-glow class="glow-card__outer"></div>
+                        <div class="glow-card__body">
+                            <h3>Find My</h3>
+                            <p>Precision Finding and a built-in speaker help you track down your case if it ever goes missing.</p>
+                        </div>
+                    </div>
+                    <div class="glow-card glow-card--orange reveal" data-glow style="transition-delay: 0.4s;">
+                        <div data-glow class="glow-card__outer"></div>
+                        <div class="glow-card__body">
+                            <h3>Easy Charging</h3>
+                            <p>Charge with a MagSafe charger, an Apple Watch charger or a Qi-certified charger. Or use the USB‑C connector for universal compatibility.</p>
+                        </div>
+                    </div>
+                    <div class="glow-card glow-card--cyan reveal" data-glow style="transition-delay: 0.5s;">
+                        <div data-glow class="glow-card__outer"></div>
+                        <div class="glow-card__body">
+                            <h3>Sweat &amp; Water Resistant</h3>
+                            <p>IP54 rated to withstand everything from heavy workouts to sudden rain.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Specifications -->
+        <section id="specs">
+            <div class="content-wrapper text-left">
+                <h2 class="gradient-text reveal">Tech Specs.</h2>
+                <div class="cards-container">
+                    <div class="glow-card glow-card--blue reveal" data-glow style="transition-delay: 0.1s;">
+                        <div data-glow class="glow-card__outer"></div>
+                        <div class="glow-card__body">
+                            <h3>Audio Tech</h3>
+                            <p>Custom-built high-excursion Apple driver, Active Noise Cancellation, Adaptive Audio, Personalized Spatial Audio.</p>
+                        </div>
+                    </div>
+                    <div class="glow-card glow-card--cyan reveal" data-glow style="transition-delay: 0.2s;">
+                        <div data-glow class="glow-card__outer"></div>
+                        <div class="glow-card__body">
+                            <h3>Sensors</h3>
+                            <p>Dual beamforming mics, Inward-facing mic, Optical in-ear sensor, Motion-detecting accelerometer, Force sensor.</p>
+                        </div>
+                    </div>
+                    <div class="glow-card glow-card--green reveal" data-glow style="transition-delay: 0.3s;">
+                        <div data-glow class="glow-card__outer"></div>
+                        <div class="glow-card__body">
+                            <h3>Chip</h3>
+                            <p>Apple H2 headphone chip.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section id="final-cta">
+            <div class="light-rays" id="cta-light-rays"></div>
+            <div class="content-wrapper text-center">
+                <h2 class="gradient-text reveal">Ready to listen?</h2>
+                <p class="subtitle reveal" style="transition-delay: 0.1s;">Choose the AirPods 4 that are right for you.</p>
+
+                <div class="selection-grid">
+                    <div class="selection-card active reveal" data-model="standard" style="transition-delay: 0.3s;">
+                        <div class="card-header">
+                            <h3>AirPods 4</h3>
+                            <span class="price">$129</span>
+                        </div>
+                        <p>The most comfortable open-ear design ever. Powered by the H2 chip.</p>
+                        <ul class="feature-list">
+                            <li>Personalized Spatial Audio</li>
+                            <li>H2 Headphone Chip</li>
+                            <li>USB-C Charging Case</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="selection-card reveal" data-model="anc" style="transition-delay: 0.4s;">
+                        <div class="card-header">
+                            <h3>AirPods 4 with ANC</h3>
+                            <span class="price">$179</span>
+                        </div>
+                        <p>Quiet the world with Active Noise Cancellation and Adaptive Audio.</p>
+                        <ul class="feature-list">
+                            <li>Active Noise Cancellation</li>
+                            <li>Find My Case Speaker</li>
+                            <li>Wireless Charging (Qi)</li>
+                        </ul>
+
+                    </div>
+                </div>
+
+                <div id="selection" class="cta-wrapper reveal" style="transition-delay: 0.5s;">
+                    <button class="shimmer-button">Order AirPods 4</button>
+                    <p class="trust-text">Free shipping · 14-day returns · Apple-style premium support</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2026 Apple Inc. All rights reserved.</p>
+                <p class="developer-credit">DESIGNED AND DEVELOPED BY SSV CHARAN</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Failsafe loader
+        setTimeout(function () {
+            var loader = document.getElementById('global-loader');
+            if (loader) loader.classList.add('fade-out');
+        }, 3000);
+
+
+
+    <script>
+        // LightRays Implementation - Vanilla JS
+        function initLightRays(containerId, count = 12) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+
+            // Add ambient layers
+            const ambient = document.createElement('div');
+            ambient.className = 'light-rays-ambient';
+            ambient.innerHTML = `
+                <div class="light-rays-ambient-1"></div>
+                <div class="light-rays-ambient-2"></div>
+            `;
+            container.appendChild(ambient);
+
+            // Create individual rays
+            for (let i = 0; i < count; i++) {
+                const ray = document.createElement('div');
+                ray.className = 'light-ray';
+                
+                // Random properties for natural look
+                const left = Math.random() * 100; // 0% to 100% of viewport
+                const rotate = Math.random() * 30 - 15; // -15deg to 15deg
+                const width = Math.random() * 300 + 150; // 150px to 450px
+                const duration = Math.random() * 8 + 12; // 12s to 20s
+                const delay = Math.random() * -20; // Random offset
+                const swing = Math.random() * 6 + 3; // 3deg to 9deg swing
+                const intensity = Math.random() * 0.3 + 0.6; // 0.6 to 0.9 (stronger base multiplier)
+                const blur = Math.random() * 15 + 20; // 20px to 35px (sharper beams)
+
+                ray.style.setProperty('--ray-left', `${left}%`);
+                ray.style.setProperty('--ray-rotate', `${rotate}deg`);
+                ray.style.setProperty('--ray-width', `${width}px`);
+                ray.style.setProperty('--ray-duration', `${duration}s`);
+                ray.style.setProperty('--ray-delay', `${delay}s`);
+                ray.style.setProperty('--ray-swing', `${swing}deg`);
+                ray.style.setProperty('--ray-intensity', intensity);
+                ray.style.setProperty('--ray-blur', `${blur}px`);
+
+                container.appendChild(ray);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initLightRays('hero-light-rays');
+            initLightRays('cta-light-rays', 8); // Subtler count for CTA
+        });
+    </script>
+
+    <script>
+        // Optimized Glow Card pointer tracking — Scoped to hovered card
+        document.addEventListener('pointermove', (e) => {
+            const card = e.target.closest('.glow-card');
+            
+            // Hue shifts globally for a consistent look, but only recalculate on significant moves
+            const xp = (e.clientX / window.innerWidth).toFixed(2);
+            const yp = (e.clientY / window.innerHeight).toFixed(2);
+            document.documentElement.style.setProperty('--xp', xp);
+            document.documentElement.style.setProperty('--yp', yp);
+
+            if (card) {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--x', x.toFixed(2));
+                card.style.setProperty('--y', y.toFixed(2));
+            }
+        });
+    </script>
+
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+          }
+        }
+    </script>
+    <script type="module" src="main.js"></script>
+</body>
+
+</html>
