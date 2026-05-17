@@ -450,11 +450,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const toggleBtn = document.getElementById('theme-toggle');
     if (!toggleBtn) return;
 
-    // Check saved preference
-    const savedTheme = localStorage.getItem('airpods-theme');
-    if (savedTheme === 'dark') {
+    // Check saved preference robustly (defaulting to dark if not set)
+    let savedTheme;
+    try {
+        savedTheme = localStorage.getItem('airpods-theme');
+    } catch (e) {
+        console.warn('Storage not accessible', e);
+    }
+    
+    const shouldBeDark = savedTheme === 'dark' || !savedTheme;
+    if (shouldBeDark) {
         document.documentElement.classList.add('dark-theme');
         document.body.classList.add('dark-theme');
+    } else {
+        document.documentElement.classList.remove('dark-theme');
+        document.body.classList.remove('dark-theme');
     }
 
     toggleBtn.addEventListener('click', () => {
@@ -464,7 +474,11 @@ document.addEventListener('DOMContentLoaded', () => {
             document.documentElement.classList.toggle('dark-theme');
             document.body.classList.toggle('dark-theme');
             const newIsDark = document.documentElement.classList.contains('dark-theme');
-            localStorage.setItem('airpods-theme', newIsDark ? 'dark' : 'light');
+            try {
+                localStorage.setItem('airpods-theme', newIsDark ? 'dark' : 'light');
+            } catch (e) {
+                console.warn('Storage write failed', e);
+            }
         };
 
         // Fallback for browsers without View Transitions API

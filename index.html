@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark-theme">
 
 <head>
     <meta charset="UTF-8">
@@ -15,7 +15,20 @@
         rel="stylesheet">
 </head>
 
-<body>
+<body class="dark-theme">
+    <script>
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('airpods-theme');
+                if (savedTheme === 'light') {
+                    document.documentElement.classList.remove('dark-theme');
+                    document.body.classList.remove('dark-theme');
+                }
+            } catch (e) {
+                console.warn('Storage not accessible', e);
+            }
+        })();
+    </script>
     <!-- Safety Loader -->
     <div class="loader-wrapper" id="global-loader">
         <div class="loader"></div>
@@ -50,8 +63,6 @@
     <main>
         <!-- Hero Section -->
         <section class="hero" id="hero">
-            <div class="light-rays" id="hero-light-rays"></div>
-            <div class="hero-ambient"></div>
             <div class="hero-content">
                 <div class="hero-card reveal">
                     <p class="hero-eyebrow">All-new</p>
@@ -272,7 +283,6 @@
 
         <!-- Final CTA -->
         <section id="final-cta">
-            <div class="light-rays" id="cta-light-rays"></div>
             <div class="content-wrapper text-center">
                 <h2 class="gradient-text reveal">Ready to listen?</h2>
                 <p class="subtitle reveal" style="transition-delay: 0.1s;">Choose the AirPods 4 that are right for you.</p>
@@ -329,57 +339,9 @@
             var loader = document.getElementById('global-loader');
             if (loader) loader.classList.add('fade-out');
         }, 3000);
-
-
-
-    <script>
-        // LightRays Implementation - Vanilla JS
-        function initLightRays(containerId, count = 12) {
-            const container = document.getElementById(containerId);
-            if (!container) return;
-
-            // Add ambient layers
-            const ambient = document.createElement('div');
-            ambient.className = 'light-rays-ambient';
-            ambient.innerHTML = `
-                <div class="light-rays-ambient-1"></div>
-                <div class="light-rays-ambient-2"></div>
-            `;
-            container.appendChild(ambient);
-
-            // Create individual rays
-            for (let i = 0; i < count; i++) {
-                const ray = document.createElement('div');
-                ray.className = 'light-ray';
-                
-                // Random properties for natural look
-                const left = Math.random() * 100; // 0% to 100% of viewport
-                const rotate = Math.random() * 30 - 15; // -15deg to 15deg
-                const width = Math.random() * 300 + 150; // 150px to 450px
-                const duration = Math.random() * 8 + 12; // 12s to 20s
-                const delay = Math.random() * -20; // Random offset
-                const swing = Math.random() * 6 + 3; // 3deg to 9deg swing
-                const intensity = Math.random() * 0.3 + 0.6; // 0.6 to 0.9 (stronger base multiplier)
-                const blur = Math.random() * 15 + 20; // 20px to 35px (sharper beams)
-
-                ray.style.setProperty('--ray-left', `${left}%`);
-                ray.style.setProperty('--ray-rotate', `${rotate}deg`);
-                ray.style.setProperty('--ray-width', `${width}px`);
-                ray.style.setProperty('--ray-duration', `${duration}s`);
-                ray.style.setProperty('--ray-delay', `${delay}s`);
-                ray.style.setProperty('--ray-swing', `${swing}deg`);
-                ray.style.setProperty('--ray-intensity', intensity);
-                ray.style.setProperty('--ray-blur', `${blur}px`);
-
-                container.appendChild(ray);
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            initLightRays('hero-light-rays');
-            initLightRays('cta-light-rays', 8); // Subtler count for CTA
-        });
     </script>
+
+
 
     <script>
         // Optimized Glow Card pointer tracking — Scoped to hovered card

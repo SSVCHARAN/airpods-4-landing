@@ -550,17 +550,7 @@ section {
     background: transparent;
 }
 
-.hero-ambient {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    height: 80%;
-    background: radial-gradient(circle at center, rgba(0, 113, 227, 0.05), transparent 60%);
-    z-index: 1;
-    pointer-events: none;
-}
+
 
 .hero-content {
     position: relative;
@@ -1170,11 +1160,7 @@ body.dark-theme .explore-arrow {
     color: #2997ff;
 }
 
-/* Hero ambient glow */
-html.dark-theme .hero-ambient,
-body.dark-theme .hero-ambient {
-    background: radial-gradient(circle at center, rgba(255,255,255,0.12), transparent 60%);
-}
+
 
 /* Paragraph text overrides */
 html.dark-theme p,
@@ -1654,62 +1640,7 @@ html.dark-theme .mouse, body.dark-theme .mouse {
     }
 }
 
-/* ── LightRays Component ────────────────────────── */
-.light-rays {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    overflow: hidden;
-    z-index: 5; /* Higher than ambient glows */
-    isolation: isolate;
-}
 
-.light-rays-ambient {
-    position: absolute;
-    inset: 0;
-    opacity: 0.6;
-    pointer-events: none;
-}
-
-.light-rays-ambient-1 {
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 20% 15%, var(--light-rays-color) 0%, transparent 70%);
-}
-
-.light-rays-ambient-2 {
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 80% 10%, var(--light-rays-secondary) 0%, transparent 75%);
-}
-
-.light-ray {
-    position: absolute;
-    top: -15%; /* Slightly higher start */
-    left: var(--ray-left);
-    width: var(--ray-width);
-    height: var(--ray-length, 100vh); /* Longer rays */
-    transform-origin: top;
-    transform: translateX(-50%) rotate(var(--ray-rotate));
-    border-radius: 999px;
-    background: linear-gradient(to bottom, var(--light-rays-color) 0%, transparent 100%);
-    mix-blend-mode: screen;
-    filter: blur(var(--ray-blur, 36px));
-    opacity: 0;
-    animation: ray-animation var(--ray-duration) ease-in-out infinite;
-    animation-delay: var(--ray-delay);
-}
-
-@keyframes ray-animation {
-    0%, 100% {
-        opacity: 0;
-        transform: translateX(-50%) rotate(calc(var(--ray-rotate) - var(--ray-swing)));
-    }
-    50% {
-        opacity: var(--ray-intensity);
-        transform: translateX(-50%) rotate(calc(var(--ray-rotate) + var(--ray-swing)));
-    }
-}
 
 /* Ensure sections are relative for LightRays */
 section {
