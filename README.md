@@ -35,16 +35,6 @@ As the user scrolls down the page, the 3D model smoothly navigates through space
 
 ---
 
-## 📸 Live Demo & Preview
-
-| Dark Mode View | Light Mode View |
-| :---: | :---: |
-| ![AirPods 4 Dark Theme](comparison.png) | ![AirPods 4 Features](comparison.png) |
-
-> *(Note: Replace `comparison.png` with your actual demo GIF or screenshot links once hosted on GitHub)*
-
----
-
 ## ✨ Key Features
 
 - 🌀 **Scroll-Driven 3D Choreography**: Real-time position, rotation angle, and camera scale transformations synced fluidly with page scroll depth using Three.js.
